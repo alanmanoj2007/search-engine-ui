@@ -1,107 +1,179 @@
-/* Basic Page Reset and Background */
+/* Custom color palette and shadow variables mapped from the image template */
 body {
     margin: 0;
-    padding: 20px;
-    background-color: #4a3f3e; /* Warm brown tone from image */
-    color: #cbc2bf;            /* Soft light grey text */
-    font-family: Arial, sans-serif;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, #372e2d 0%, #5d4b4a 100%);
+    min-height: 100vh;
+    color: #cbc2bf;
+    font-family: 'Inter', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-/* Links at Top Right */
+/* Header Links */
 .top-nav {
     text-align: right;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .top-nav a {
     color: #cbc2bf;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 24px;
+    font-size: 15px;
+    opacity: 0.85;
 }
 
-/* Centered Content Wrapper */
+/* Centered content block matching template alignment */
 .main-content {
-    max-width: 700px;
+    max-width: 780px;
     margin: 0 auto;
     text-align: center;
 }
 
-/* Script Style Logo */
+/* Elegant Cursive Alsa Logo */
 .logo {
-    font-size: 80px;
-    font-weight: normal;
-    margin-bottom: 20px;
+    font-family: 'Alex Brush', cursive;
+    font-size: 115px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    color: #cbc2bf;
+    line-height: 1;
+    letter-spacing: 1px;
+    opacity: 0.95;
 }
 
-/* Main Search Input Styling */
+/* Search Box Container with absolute layout for internal icon alignment */
+.search-box {
+    margin-bottom: 45px;
+    position: relative;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .search-box input {
     width: 100%;
-    padding: 12px 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    color: #white;
-    font-size: 16px;
+    padding: 13px 20px 13px 45px;
+    background-color: rgba(117, 102, 101, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 30px;
+    color: #cbc2bf;
+    font-size: 14px;
     box-sizing: border-box;
     outline: none;
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.05), 
+                inset -1px -1px 3px rgba(0, 0, 0, 0.25),
+                0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Large Discover Panel Container */
+.search-box input::placeholder {
+    color: #8c817f;
+}
+
+.search-bar-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8c817f;
+    font-size: 14px;
+}
+
+/* Large Background Panel for Discover Section */
 .discover-box {
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 40px;
+    background-color: rgba(100, 85, 84, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 28px;
+    padding: 24px;
     text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .discover-header {
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    padding: 0 6px;
     font-size: 18px;
+    color: #cbc2bf;
 }
 
-/* 5-Column Grid Layout */
+.header-search-icon {
+    color: #8c817f;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Responsive Grid Configuration matching 5x2 dashboard blueprint */
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 14px;
 }
 
-/* Individual Grid Buttons */
+/* Soft Pill Shading Layer */
 .card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    height: 60px;
+    text-decoration: none;
+    background-color: rgba(115, 100, 99, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 18px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #cbc2bf;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background 0.2s;
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.05),
+                inset -1px -1px 3px rgba(0, 0, 0, 0.2),
+                2px 4px 8px rgba(0, 0, 0, 0.05);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover Feedback */
+.inner-card {
+    color: #908482;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Hover Adjustments */
 .card:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(135, 120, 119, 0.35);
+    transform: translateY(-1px);
 }
 
-/* --- Responsive Layout Rules --- */
+.card:hover .inner-card {
+    color: #cbc2bf;
+}
 
-/* For Tablets (Change grid layout from 5 columns to 3 columns) */
-@media (max-width: 600px) {
+/* --- Responsive Adjustments --- */
+
+/* Tablets */
+@media (max-width: 720px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    .logo {
+        font-size: 95px;
+    }
 }
 
-/* For Mobile Phones (Change grid layout to 2 columns) */
-@media (max-width: 400px) {
+/* Mobile Devices */
+@media (max-width: 460px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     .logo {
-        font-size: 60px;
+        font-size: 80px;
+    }
+    .discover-box {
+        padding: 16px;
+        border-radius: 20px;
+    }
+    .card {
+        height: 58px;
+        border-radius: 14px;
     }
 }
