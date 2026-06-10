@@ -1,0 +1,107 @@
+/* Basic Page Reset and Background */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #4a3f3e; /* Warm brown tone from image */
+    color: #cbc2bf;            /* Soft light grey text */
+    font-family: Arial, sans-serif;
+}
+
+/* Links at Top Right */
+.top-nav {
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+.top-nav a {
+    color: #cbc2bf;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Centered Content Wrapper */
+.main-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Script Style Logo */
+.logo {
+    font-size: 80px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* Main Search Input Styling */
+.search-box input {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: #white;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Large Discover Panel Container */
+.discover-box {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.discover-header {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* 5-Column Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+/* Individual Grid Buttons */
+.card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbc2bf;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+/* Hover Feedback */
+.card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Responsive Layout Rules --- */
+
+/* For Tablets (Change grid layout from 5 columns to 3 columns) */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* For Mobile Phones (Change grid layout to 2 columns) */
+@media (max-width: 400px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .logo {
+        font-size: 60px;
+    }
+}
